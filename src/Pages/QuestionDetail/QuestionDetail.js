@@ -10,7 +10,7 @@ const SingleQuestion = () => {
     const [answers, setAnswers] = useState([]);
     const questionByPostId = async () => {
         try {
-            const question = await axios.get(`http://localhost:4000/api/questions/${params.id}`);
+            const question = await axios.get(`${process.env.REACT_APP_base_url}/api/questions/${params.id}`);
             setQuestion(question.data.data);
         } catch (err) {
             console.log("problem", err);
